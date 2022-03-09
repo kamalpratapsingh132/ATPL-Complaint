@@ -1,0 +1,86 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap')
+.{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    background: #fff;
+    font-family: 'Poppins',sans-serif;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+}
+.container{
+    max-width:400px;
+    border-radius:20px;
+}
+.card{
+    border-radius:20px;
+    height:600px;
+    background-image: linear-gradient(to right,#0084ff,#00f2ff);
+    border:none;
+    overflow:hidden;
+    box-shadow: 0 5px 8px #414141;
+    z-index:0;
+    box-sizing: border-box;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 0px;
+    padding: 0.25rem;
+}
+.circle {
+    position: absolute;
+    bottom: 230px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+
+}
+.card-body {
+    background: #fff;
+}
+
+}
+.myHed {
+    margin-top: 30px;
+    font-size: 32px;
+    margin-bottom: 10px;
+    fort-weight: 700px;
+    background-image: linear-gradient(to right, to right,#0084ff,#00f2ff);
+    color:transparent;
+     background-clip:Text;
+
+}
+.far{
+    font-size:40px;
+}
+.fas{
+    position:relative;
+    display:black;
+    left:-87px;
+    top:30px;
+    color:rgb(255,255,255);
+}
+.button{
+    width:250px;
+    border-radius:25px;
+    background-image: linear-gradient(to right, #0084ff,#00f2ff);
+    font-weight:700;
+    cursor:pointer;
+}
+.myInput{
+    width:220ppx;
+    padding;10px;
+    padding-left:40px;
+    border-radius:25px;
+    background-image:linear-gradient(to right, #0084ff, #00f2ff);
+    color:#ffffff;
+    border:none;
+    display:block;
+}
+

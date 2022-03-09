@@ -1,0 +1,50 @@
+﻿@model ATPL_Complaint.Models.client
+@{
+    Layout="~/Views/Shared/admin_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ticket_status_check</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+               TICKETS STATUS
+            </h3>
+        </div>
+        <table class="table table-bordered" style="width:100%" height:220%px">
+            <tr>
+                <th>S.No.</th>
+                <th>Date</th>
+                <th>Ticket Number</th>
+                <th>Query</th>
+                <th>Status</th>
+                <th style="text-align:center">Action</th>
+                    @*<th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.ticket_check)
+            {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.date</td>
+            <td>@item.ticket_for</td>
+            <td>@item.message</td>
+            <td style="color:red">@item.status</td>
+            <td align="center">
+                <a href="@Url.Action("ticket_status_update",new { item.id})" class="btn btn-success">PROCESS</a>
+
+            
+           <a href="@Url.Action("ticket_status_update",new { item.id})" class="btn btn-success">COMPLETE</a>
+        </td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model ATPL_Complaint.Models.client
+@{
+    Layout = "~/Views/Shared/sadmin_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>clientlist</title>
+</head>
+<body>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Company Name</th>
+                <th>Contact Person</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Contact Number</th>
+                <th>Email Id</th>
+                <th>GST No.</th>
+                <th>PAN No</th>
+                @*<th style="text-align:center">Edit</th>
+                    <th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.clientlist)
+            {
+                <tr>
+                    <td>@item.company_name</td>
+                    <td>@item.contact_person</td>
+                    <td>@item.address</td>
+                    <td>@item.city</td>
+                    <td>@item.state</td>
+                    <td>@item.pincode</td>
+                    <td>@item.contact_no</td>
+                    <td>@item.email_id</td>
+                    <td>@item.gst_no</td>
+                    <td>@item.pan_no</td>
+                    @*<td align="center">
+                            <a href="@Url.Action("#",new { item.id})" class="btn btn-success">Edit</a>
+
+                        </td>
+                        <td align="center">
+                            <a href="@Url.Action("clientdelete",new { item.id })" OnClick="return confirm('Are you sure? want to delete the data.');" class="btn btn-danger">Delete</a>
+                        </td>*@
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿@model ATPL_Complaint.Models.support_ticket
+@{
+    Layout = "~/Views/Shared/admin_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TICKET STATUS</title>
+</head>
+<body>
+    <div class="col-lg-12 main-body">
+        @using (Html.BeginForm("ticket_check", "admin", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12"><h3>ticket status</h3></div>
+                <div >
+                    <table class="table table-bordered" style="width:100%" height:220%px">
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Date</th>
+                            <th>Ticket Number</th>
+                            <th>Query</th>
+                            <th>Status</th>
+                            <th style="text-align:center">Action</th>
+                            @*<th style="text-align:center">Delete</th>*@
+                        </tr>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.id)</td>
+                                <td>@Html.DisplayFor(model => model.date)</td>
+                                <td>@Html.DisplayFor(model => model.ticket_for)</td>
+                                <td>@Html.DisplayFor(model => model.message)</td>
+                                <td style="color:red">@Html.DisplayFor(model => model.status)</td>
+                                <td align="center">
+                                    <a href="@Url.Action("ticket_status_update",new { Model.id})" class="btn btn-success">PROCESS</a>
+
+
+                                    <a href="@Url.Action("complete_Ticket",new { Model.id})" class="btn btn-success">COMPLETE</a>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+@*<table class="table">
+    <tr>
+        <th>DATE</th>
+        <td>:</td>
+        <td>
+            @Html.DisplayFor(model => model.date)
+        </td>
+    </tr>
+    <tr>
+        <th> PRODUCT ID </th>
+        <td>:</td>
+        <td>@Html.DisplayFor(model => model.select_product)</td>
+    </tr>
+    <tr>
+        <th>TICKET</th>
+        <td>:</td>
+        <td>@Html.DisplayFor(model => model.ticket_for)</td>
+    </tr>
+    <tr>
+        <th>message</th>
+        <td>:</td>
+        <td>@Html.DisplayFor(model => model.message)</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>:</td>
+        <td>)</td>
+    </tr>
+</table>*@

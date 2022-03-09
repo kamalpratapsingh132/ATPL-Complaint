@@ -1,0 +1,82 @@
+﻿@model ATPL_Complaint.Models.tbl_client
+@{
+    Layout = "~/Views/Shared/client_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PROFILE</title>
+</head>
+<body>
+    <div class="col-lg-9 main-body">
+        @using (Html.BeginForm("profile", "client", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12"><h3>Profile</h3></div>
+                <div class="col-lg-6">
+                    <table class="table">
+                        <tr>
+                            <th>COMPANY ID</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.company_id)</td>
+                        </tr>
+                        <tr>
+                            <th>COMPANY NAME</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.company_name)</td>
+                        </tr>
+                        <tr>
+                            <th>CONTACT PERSON</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.contact_person)</td>
+                        </tr>
+                        <tr>
+                            <th>EMAIL ID</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.email_id)</td>
+                        </tr>
+                        <tr>
+                            <th>CONTACT NUMBER</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.contact_no)</td>
+                        </tr>
+                        <tr>
+                            <th>EMAIL ID</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.address)</td>
+                        </tr>
+                        <tr>
+                            <th>CITY</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.city)</td>
+                        </tr>
+                        <tr>
+                            <th>STATE</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.state)</td>
+                        </tr>
+                        <tr>
+                            <th>PINCODE</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.pincode)</td>
+                        </tr>
+                        <tr>
+                            <th>GST.NO</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.gst_no)</td>
+                        </tr>
+                        <tr>
+                            <th>PANCARD NUMBER</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.pan_no)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

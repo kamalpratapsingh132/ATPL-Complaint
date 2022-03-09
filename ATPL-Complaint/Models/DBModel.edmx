@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ATPL_ComplaintModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_add_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="emp_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="state" Type="nvarchar" MaxLength="50" />
+          <Property Name="pincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="desigination" Type="nvarchar" MaxLength="50" />
+          <Property Name="department" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_assi_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="select_client_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="select_product" Type="nvarchar" MaxLength="50" />
+          <Property Name="select_client" Type="nvarchar" MaxLength="50" />
+          <Property Name="select_emp" Type="nvarchar" MaxLength="50" />
+          <Property Name="select_project_supp" Type="nvarchar" MaxLength="50" />
+          <Property Name="installation_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="amc_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="amc_per" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_caty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="caty_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="product_caty" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_city">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state_id" Type="int" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_client">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="company_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact_person" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="state" Type="nvarchar" MaxLength="50" />
+          <Property Name="pincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="contact_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="gst_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="pan_no" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dept_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="dept_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_designation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="designation_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="designation_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="product_category" Type="nvarchar" MaxLength="50" />
+          <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tbl_sadmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="contactno" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_state">
+          <Key>
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="state_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Support_ticket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="nvarchar" MaxLength="50" />
+          <Property Name="select_product" Type="nvarchar" MaxLength="50" />
+          <Property Name="ticket_for" Type="nvarchar" MaxLength="50" />
+          <Property Name="message" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_ticket_for">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ticket_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="ticket_for" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="Sp_add_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="emp_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="emp_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="contact_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="email_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="pwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="city" Type="nvarchar" Mode="In" />
+          <Parameter Name="state" Type="nvarchar" Mode="In" />
+          <Parameter Name="pincode" Type="nvarchar" Mode="In" />
+          <Parameter Name="desigination" Type="nvarchar" Mode="In" />
+          <Parameter Name="department" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_add_ticket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="date" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_product" Type="nvarchar" Mode="In" />
+          <Parameter Name="ticket_for" Type="nvarchar" Mode="In" />
+          <Parameter Name="message" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_addclient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="company_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="company_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="contact_person" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="city" Type="nvarchar" Mode="In" />
+          <Parameter Name="state" Type="nvarchar" Mode="In" />
+          <Parameter Name="pincode" Type="nvarchar" Mode="In" />
+          <Parameter Name="contact_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="email_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="pwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="gst_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="pan_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_addproduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="product_category" Type="nvarchar" Mode="In" />
+          <Parameter Name="product_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="description" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_assiproduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="select_client_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_product" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_client" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_project_supp" Type="nvarchar" Mode="In" />
+          <Parameter Name="installation_date" Type="nvarchar" Mode="In" />
+          <Parameter Name="amc_date" Type="nvarchar" Mode="In" />
+          <Parameter Name="amount" Type="nvarchar" Mode="In" />
+          <Parameter Name="amc_per" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="sp_Change_Pass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="newPass" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="sp_check_AMC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_check_AMC_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Complete_ticket" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="message" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_assi_product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="sp_New_check_AMC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Update_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="emp_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="emp_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="contact_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="email_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="pwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="city" Type="nvarchar" Mode="In" />
+          <Parameter Name="state" Type="nvarchar" Mode="In" />
+          <Parameter Name="pincode" Type="nvarchar" Mode="In" />
+          <Parameter Name="desigination" Type="nvarchar" Mode="In" />
+          <Parameter Name="department" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_assi_product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="select_client_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_product" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_client" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_emp" Type="nvarchar" Mode="In" />
+          <Parameter Name="select_project_supp" Type="nvarchar" Mode="In" />
+          <Parameter Name="installation_date" Type="nvarchar" Mode="In" />
+          <Parameter Name="amc_date" Type="nvarchar" Mode="In" />
+          <Parameter Name="amount" Type="nvarchar" Mode="In" />
+          <Parameter Name="amc_per" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="company_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="company_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="contact_person" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="city" Type="nvarchar" Mode="In" />
+          <Parameter Name="state" Type="nvarchar" Mode="In" />
+          <Parameter Name="pincode" Type="nvarchar" Mode="In" />
+          <Parameter Name="contact_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="email_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="pwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="gst_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="pan_no" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_product" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="product_id" Type="nvarchar" Mode="In" />
+          <Parameter Name="product_category" Type="nvarchar" Mode="In" />
+          <Parameter Name="product_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="description" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_ticket_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="message" Type="nvarchar" Mode="In" />
+          <Parameter Name="accid" Type="numeric" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="ATPL_ComplaintModelStoreContainer">
+          <EntitySet Name="tbl_add_admin" EntityType="Self.tbl_add_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_assi_product" EntityType="Self.tbl_assi_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_caty" EntityType="Self.tbl_caty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_city" EntityType="Self.tbl_city" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_client" EntityType="Self.tbl_client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_department" EntityType="Self.tbl_department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_designation" EntityType="Self.tbl_designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_sadmin" EntityType="Self.tbl_sadmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_state" EntityType="Self.tbl_state" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Support_ticket" EntityType="Self.tbl_Support_ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ticket_for" EntityType="Self.tbl_ticket_for" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ATPL_ComplaintModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_add_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="emp_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="desigination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_assi_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="select_client_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="select_product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="select_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="select_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="select_project_supp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="installation_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amc_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amc_per" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_caty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="caty_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="product_caty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_city">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state_id" Type="Int32" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_client">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="company_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gst_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pan_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dept_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dept_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_designation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="designation_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="designation_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="product_category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_sadmin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contactno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_state">
+          <Key>
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="state_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Support_ticket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="select_product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ticket_for" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="message" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_ticket_for">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ticket_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ticket_for" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_add_admin" EntityType="Self.tbl_add_admin" />
+          <EntitySet Name="tbl_assi_product" EntityType="Self.tbl_assi_product" />
+          <EntitySet Name="tbl_caty" EntityType="Self.tbl_caty" />
+          <EntitySet Name="tbl_city" EntityType="Self.tbl_city" />
+          <EntitySet Name="tbl_client" EntityType="Self.tbl_client" />
+          <EntitySet Name="tbl_department" EntityType="Self.tbl_department" />
+          <EntitySet Name="tbl_designation" EntityType="Self.tbl_designation" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" />
+          <EntitySet Name="tbl_sadmin" EntityType="Self.tbl_sadmin" />
+          <EntitySet Name="tbl_state" EntityType="Self.tbl_state" />
+          <EntitySet Name="tbl_Support_ticket" EntityType="Self.tbl_Support_ticket" />
+          <EntitySet Name="tbl_ticket_for" EntityType="Self.tbl_ticket_for" />
+          <FunctionImport Name="Sp_add_admin">
+            <Parameter Name="emp_id" Mode="In" Type="String" />
+            <Parameter Name="emp_name" Mode="In" Type="String" />
+            <Parameter Name="contact_no" Mode="In" Type="String" />
+            <Parameter Name="email_id" Mode="In" Type="String" />
+            <Parameter Name="pwd" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="pincode" Mode="In" Type="String" />
+            <Parameter Name="desigination" Mode="In" Type="String" />
+            <Parameter Name="department" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_add_ticket">
+            <Parameter Name="date" Mode="In" Type="String" />
+            <Parameter Name="select_product" Mode="In" Type="String" />
+            <Parameter Name="ticket_for" Mode="In" Type="String" />
+            <Parameter Name="message" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_addclient">
+            <Parameter Name="company_id" Mode="In" Type="String" />
+            <Parameter Name="company_name" Mode="In" Type="String" />
+            <Parameter Name="contact_person" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="pincode" Mode="In" Type="String" />
+            <Parameter Name="contact_no" Mode="In" Type="String" />
+            <Parameter Name="email_id" Mode="In" Type="String" />
+            <Parameter Name="pwd" Mode="In" Type="String" />
+            <Parameter Name="gst_no" Mode="In" Type="String" />
+            <Parameter Name="pan_no" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_addproduct">
+            <Parameter Name="product_id" Mode="In" Type="String" />
+            <Parameter Name="product_category" Mode="In" Type="String" />
+            <Parameter Name="product_name" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_assiproduct">
+            <Parameter Name="select_client_id" Mode="In" Type="String" />
+            <Parameter Name="select_product" Mode="In" Type="String" />
+            <Parameter Name="select_client" Mode="In" Type="String" />
+            <Parameter Name="select_emp" Mode="In" Type="String" />
+            <Parameter Name="select_project_supp" Mode="In" Type="String" />
+            <Parameter Name="installation_date" Mode="In" Type="String" />
+            <Parameter Name="amc_date" Mode="In" Type="String" />
+            <Parameter Name="amount" Mode="In" Type="String" />
+            <Parameter Name="amc_per" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Change_Pass">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="newPass" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_check_AMC" ReturnType="Collection(ATPL_ComplaintModel.sp_check_AMC_Result)" />
+          <FunctionImport Name="sp_check_AMC_New" ReturnType="Collection(ATPL_ComplaintModel.sp_check_AMC_New_Result)" />
+          <FunctionImport Name="Sp_Complete_ticket">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="message" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_admin">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_assi_product">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_client">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_product">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_New_check_AMC" ReturnType="Collection(ATPL_ComplaintModel.sp_New_check_AMC_Result)" />
+          <FunctionImport Name="Sp_Update_admin">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="emp_id" Mode="In" Type="String" />
+            <Parameter Name="emp_name" Mode="In" Type="String" />
+            <Parameter Name="contact_no" Mode="In" Type="String" />
+            <Parameter Name="email_id" Mode="In" Type="String" />
+            <Parameter Name="pwd" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="pincode" Mode="In" Type="String" />
+            <Parameter Name="desigination" Mode="In" Type="String" />
+            <Parameter Name="department" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_assi_product">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="select_client_id" Mode="In" Type="String" />
+            <Parameter Name="select_product" Mode="In" Type="String" />
+            <Parameter Name="select_client" Mode="In" Type="String" />
+            <Parameter Name="select_emp" Mode="In" Type="String" />
+            <Parameter Name="select_project_supp" Mode="In" Type="String" />
+            <Parameter Name="installation_date" Mode="In" Type="String" />
+            <Parameter Name="amc_date" Mode="In" Type="String" />
+            <Parameter Name="amount" Mode="In" Type="String" />
+            <Parameter Name="amc_per" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_client">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="company_id" Mode="In" Type="String" />
+            <Parameter Name="company_name" Mode="In" Type="String" />
+            <Parameter Name="contact_person" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="pincode" Mode="In" Type="String" />
+            <Parameter Name="contact_no" Mode="In" Type="String" />
+            <Parameter Name="email_id" Mode="In" Type="String" />
+            <Parameter Name="pwd" Mode="In" Type="String" />
+            <Parameter Name="gst_no" Mode="In" Type="String" />
+            <Parameter Name="pan_no" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_product">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="product_id" Mode="In" Type="String" />
+            <Parameter Name="product_category" Mode="In" Type="String" />
+            <Parameter Name="product_name" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_ticket_status">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="message" Mode="In" Type="String" />
+            <Parameter Name="accid" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_check_AMC_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="select_client_id" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_product" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_client" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_emp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_project_supp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="installation_date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amc_date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amount" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amc_per" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="amc_date1" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_check_AMC_New_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="select_client_id" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_product" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_client" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_emp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_project_supp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="installation_date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amc_date" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="amount" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amc_per" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_New_check_AMC_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="select_client_id" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_product" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_client" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_emp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="select_project_supp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="installation_date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amc_date" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="amount" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="amc_per" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ATPL_ComplaintModelStoreContainer" CdmEntityContainer="DBModel">
+          <EntitySetMapping Name="tbl_add_admin">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_add_admin">
+              <MappingFragment StoreEntitySet="tbl_add_admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+                <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+                <ScalarProperty Name="email_id" ColumnName="email_id" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="desigination" ColumnName="desigination" />
+                <ScalarProperty Name="department" ColumnName="department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_assi_product">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_assi_product">
+              <MappingFragment StoreEntitySet="tbl_assi_product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="select_client_id" ColumnName="select_client_id" />
+                <ScalarProperty Name="select_product" ColumnName="select_product" />
+                <ScalarProperty Name="select_client" ColumnName="select_client" />
+                <ScalarProperty Name="select_emp" ColumnName="select_emp" />
+                <ScalarProperty Name="select_project_supp" ColumnName="select_project_supp" />
+                <ScalarProperty Name="installation_date" ColumnName="installation_date" />
+                <ScalarProperty Name="amc_date" ColumnName="amc_date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="amc_per" ColumnName="amc_per" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_caty">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_caty">
+              <MappingFragment StoreEntitySet="tbl_caty">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="caty_id" ColumnName="caty_id" />
+                <ScalarProperty Name="product_caty" ColumnName="product_caty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_city">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_city">
+              <MappingFragment StoreEntitySet="tbl_city">
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+                <ScalarProperty Name="city" ColumnName="city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_client">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_client">
+              <MappingFragment StoreEntitySet="tbl_client">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="contact_person" ColumnName="contact_person" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+                <ScalarProperty Name="email_id" ColumnName="email_id" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="gst_no" ColumnName="gst_no" />
+                <ScalarProperty Name="pan_no" ColumnName="pan_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_department">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_department">
+              <MappingFragment StoreEntitySet="tbl_department">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_designation">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_designation">
+              <MappingFragment StoreEntitySet="tbl_designation">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="designation_id" ColumnName="designation_id" />
+                <ScalarProperty Name="designation_name" ColumnName="designation_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_product">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_product">
+              <MappingFragment StoreEntitySet="tbl_product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_category" ColumnName="product_category" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_sadmin">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_sadmin">
+              <MappingFragment StoreEntitySet="tbl_sadmin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="contactno" ColumnName="contactno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_state">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_state">
+              <MappingFragment StoreEntitySet="tbl_state">
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Support_ticket">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_Support_ticket">
+              <MappingFragment StoreEntitySet="tbl_Support_ticket">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="select_product" ColumnName="select_product" />
+                <ScalarProperty Name="ticket_for" ColumnName="ticket_for" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ticket_for">
+            <EntityTypeMapping TypeName="ATPL_ComplaintModel.tbl_ticket_for">
+              <MappingFragment StoreEntitySet="tbl_ticket_for">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ticket_id" ColumnName="ticket_id" />
+                <ScalarProperty Name="ticket_for" ColumnName="ticket_for" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_add_admin" FunctionName="ATPL_ComplaintModel.Store.Sp_add_admin" />
+          <FunctionImportMapping FunctionImportName="Sp_add_ticket" FunctionName="ATPL_ComplaintModel.Store.Sp_add_ticket" />
+          <FunctionImportMapping FunctionImportName="Sp_addclient" FunctionName="ATPL_ComplaintModel.Store.Sp_addclient" />
+          <FunctionImportMapping FunctionImportName="Sp_addproduct" FunctionName="ATPL_ComplaintModel.Store.Sp_addproduct" />
+          <FunctionImportMapping FunctionImportName="Sp_assiproduct" FunctionName="ATPL_ComplaintModel.Store.Sp_assiproduct" />
+          <FunctionImportMapping FunctionImportName="sp_Change_Pass" FunctionName="ATPL_ComplaintModel.Store.sp_Change_Pass" />
+          <FunctionImportMapping FunctionImportName="sp_check_AMC" FunctionName="ATPL_ComplaintModel.Store.sp_check_AMC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ATPL_ComplaintModel.sp_check_AMC_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="select_client_id" ColumnName="select_client_id" />
+                <ScalarProperty Name="select_product" ColumnName="select_product" />
+                <ScalarProperty Name="select_client" ColumnName="select_client" />
+                <ScalarProperty Name="select_emp" ColumnName="select_emp" />
+                <ScalarProperty Name="select_project_supp" ColumnName="select_project_supp" />
+                <ScalarProperty Name="installation_date" ColumnName="installation_date" />
+                <ScalarProperty Name="amc_date" ColumnName="amc_date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="amc_per" ColumnName="amc_per" />
+                <ScalarProperty Name="amc_date1" ColumnName="amc_date1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_check_AMC_New" FunctionName="ATPL_ComplaintModel.Store.sp_check_AMC_New">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ATPL_ComplaintModel.sp_check_AMC_New_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="select_client_id" ColumnName="select_client_id" />
+                <ScalarProperty Name="select_product" ColumnName="select_product" />
+                <ScalarProperty Name="select_client" ColumnName="select_client" />
+                <ScalarProperty Name="select_emp" ColumnName="select_emp" />
+                <ScalarProperty Name="select_project_supp" ColumnName="select_project_supp" />
+                <ScalarProperty Name="installation_date" ColumnName="installation_date" />
+                <ScalarProperty Name="amc_date" ColumnName="amc_date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="amc_per" ColumnName="amc_per" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Complete_ticket" FunctionName="ATPL_ComplaintModel.Store.Sp_Complete_ticket" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_admin" FunctionName="ATPL_ComplaintModel.Store.Sp_Delete_admin" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_assi_product" FunctionName="ATPL_ComplaintModel.Store.Sp_Delete_assi_product" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_client" FunctionName="ATPL_ComplaintModel.Store.Sp_Delete_client" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_product" FunctionName="ATPL_ComplaintModel.Store.Sp_Delete_product" />
+          <FunctionImportMapping FunctionImportName="sp_New_check_AMC" FunctionName="ATPL_ComplaintModel.Store.sp_New_check_AMC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ATPL_ComplaintModel.sp_New_check_AMC_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="select_client_id" ColumnName="select_client_id" />
+                <ScalarProperty Name="select_product" ColumnName="select_product" />
+                <ScalarProperty Name="select_client" ColumnName="select_client" />
+                <ScalarProperty Name="select_emp" ColumnName="select_emp" />
+                <ScalarProperty Name="select_project_supp" ColumnName="select_project_supp" />
+                <ScalarProperty Name="installation_date" ColumnName="installation_date" />
+                <ScalarProperty Name="amc_date" ColumnName="amc_date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="amc_per" ColumnName="amc_per" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Update_admin" FunctionName="ATPL_ComplaintModel.Store.Sp_Update_admin" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_assi_product" FunctionName="ATPL_ComplaintModel.Store.Sp_Update_assi_product" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_client" FunctionName="ATPL_ComplaintModel.Store.Sp_Update_client" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_product" FunctionName="ATPL_ComplaintModel.Store.Sp_Update_product" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_ticket_status" FunctionName="ATPL_ComplaintModel.Store.Sp_Update_ticket_status" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

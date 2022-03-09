@@ -1,0 +1,116 @@
+﻿@model ATPL_Complaint.Models.support_ticket
+@{
+    Layout = "~/Views/Shared/client_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>clientlist</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12"><h3>PENDING TICKETS</h3></div>
+        <table class="table table-bordered" style="width:100%" height:220%px">
+            <tr>
+                <th>S.No.</th>
+                <th>Date</th>
+                <th>Ticket Number</th>
+                <th>Query</th>
+                <th>Status</th>
+                @*<th style="text-align:center">Edit</th>
+        <th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.support_ticket)
+            {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.date</td>
+            <td>@item.ticket_for</td>
+            <td>@item.message</td>
+            <td style="color:red">@item.status</td>
+            @*<td align="center">
+            <a href="@Url.Action("#",new { item.id})" class="btn btn-success">Edit</a>
+
+        </td>
+        <td align="center">
+            <a href="@Url.Action("clientdelete",new { item.id })" OnClick="return confirm('Are you sure? want to delete the data.');" class="btn btn-danger">Delete</a>
+        </td>*@
+        </tr>
+            }
+        </table>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12"><h3>COMPLETE TICKETS
+             </h3></div>
+        <table class="table table-bordered" style="width:100%" height:220%px">
+            <tr>
+                <th>S.No.</th>
+                <th>Date</th>
+                <th>Ticket Number</th>
+                <th>Query</th>
+                <th>Status</th>
+                @*<th style="text-align:center">Edit</th>
+        <th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.complete_ticket)
+            {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.date</td>
+            <td>@item.ticket_for</td>
+            <td>@item.message</td>
+            <td style="color:red">@item.status</td>
+            @*<td align="center">
+            <a href="@Url.Action("#",new { item.id})" class="btn btn-success">Edit</a>
+
+        </td>
+        <td align="center">
+            <a href="@Url.Action("clientdelete",new { item.id })" OnClick="return confirm('Are you sure? want to delete the data.');" class="btn btn-danger">Delete</a>
+        </td>*@
+        </tr>
+            }
+        </table>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12"><h3>UPCOMING AMC</h3></div>
+        <table class="table table-bordered">
+            <tr>
+                <th>PRODUCT</th>
+                <th>AMC DATE</th>
+                <th>AMOUNT</th>
+                <th>AMC %</th>
+                @*<th style="text-align:center">Edit</th>
+                    <th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.upcomingamclist)
+            {
+                <tr>
+                    <td>@item.select_product</td>
+                    <td>@item.amc_date</td>
+                    <td>@item.amount</td>
+                    <td>@item.amc_per</td>
+                    @*<td align="center">
+                            <a href="@Url.Action("#",new { item.id})" class="btn btn-success">Edit</a>
+
+                        </td>
+                        <td align="center">
+                            <a href="@Url.Action("clientdelete",new { item.id })" OnClick="return confirm('Are you sure? want to delete the data.');" class="btn btn-danger">Delete</a>
+                        </td>*@
+                </tr>
+            }
+        </table>
+    </div>
+
+
+</body>
+</html>

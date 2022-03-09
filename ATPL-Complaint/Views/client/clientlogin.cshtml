@@ -1,0 +1,167 @@
+﻿@model ATPL_Complaint.Models.client
+@{
+    ViewBag.Title = "MSAI Data Valuation | Client - Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CLIENT LOGIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/logindesign/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/logindesign/fonts/font-awesome4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    @*
+    <link href="~/logindesign/vendors/animate/animate.css" rel="stylesheet" />*@
+    <link href="~/logindesign/vendors/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <link href="~/logindesign/vendors/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/logindesign/css/util.css" rel="stylesheet" />
+    <link href="~/logindesign/css/main.css" rel="stylesheet" />
+
+    <style>
+       /* .change {
+            height: 49px;
+            border-radius: 0px;
+            width: 100%;
+        }
+
+        .differ {
+            margin: 4px;
+            margin-left: -38px;
+        }
+*/
+        .tittle {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 29px;
+            color: #333333;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+            display: block;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <div class="limiter" style="background:linear-gradient(-135deg, #ffff, #33cc33)">
+                <div class="container-login100" style="background: linear-gradient(-135deg, #ffff, #33cc33);">
+            <div style=  "margin-left: 136px;height:731px;width:10px;padding:0px;margin:0px;">
+                <span style="margin-left: 136px">  <img src="~/logindesign/image/atpl (3).png" /></span>
+            </div>
+
+            <div class="wrap-login100" style="width: 484px; border-radius: 0px">
+                @*<div class="login100-pic js-tilt" data-tilt>
+                <img src="~/logindesign/image/img-01.png" alt="IMG" />
+            </div>*@
+
+                @using (Html.BeginForm("clientlogin", "client", FormMethod.Post))
+                {
+                    @*<i class="fa fa-user"></i>*@
+                <form class="login100-form validate-form">
+
+                    <span class="tittle">
+                        Login to your account
+                    </span>
+
+
+                    <div class="login100-form">
+                        @Html.LabelFor(Model => Model.contact_no, new { htmlAttributes = new { @class = "control-label login100 - form ", @autocomplete = "off" } })
+                        @Html.ValidationMessageFor(Model => Model.contact_no, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        @Html.EditorFor(model => model.contact_no, new { htmlAttributes = new { @class = "input100", @autocomplete = "off", @placeholder = "CONTACT NUMBER" } })
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-mobile-phone" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    @*<div>*@
+                    @*<div class="wrap-input100">
+
+            @Html.LabelFor(model => model.contact_no, new { htmlAttributes = new { @class = "", } })
+
+            @Html.EditorFor(model => model.contact_no, new { htmlAttributes = new { @class = "input100 change", @autocomplete = "off", @placeholder = "CONTACT NUMBER" } })
+
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-mobile-phone" aria-hidden="true"></i>
+            </span>
+        </div>*@
+
+                    <div>
+                        @Html.LabelFor(Model => Model.pwd, new { htmlAttributes = new { @class = "control-label", @autocomplete = "off" } })
+                        @Html.ValidationMessageFor(Model => Model.pwd, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        @Html.EditorFor(model => model.pwd, new { htmlAttributes = new { @class = "input100", @autocomplete = "off", @placeholder = "PASSWORD", type = "Password" } })
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div>
+                        @* <a href="~/captcha.ashx">~/captcha.ashx</a>*@
+
+                        <img src="~/captcha.ashx" style="height: 30px; width: 200px;margin: 4px;" alt="capcha image" />
+                        @Html.ValidationMessageFor(model => model.cap, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="wrap-input100">
+                        @Html.EditorFor(model => model.cap, new { htmlAttributes = new { @class = "input100 change", @autocomplete = "off", @placeholder = "Enter Above Capcha", @maxlength = "6" } })
+                        @*<span class="focus-input100"></span>*@
+                        <span class="symbol-input100">
+                            <i class="fa" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="text-right" style="font-family:'Times New Roman', Times, serif; Padding-top:5px">
+                        <input type="submit" class="btn btn-success" style="border-radius:0px;" value="LOGIN" />
+                        @*<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>*@
+                        @* <button class="login100-form-btn" type="submit">*@
+
+                        @*</button>*@
+                    </div>
+                    <div>
+                        <a class="btn-link" href= "/client/forgetpwd/">forget Your Password ?</a>
+                        <p>No worries, click here to reset your password.</p>
+                    </div>
+
+                    @*<div class="text-center p-t-12">
+            <span class="txt1">
+                Forgot
+            </span>
+            <a class="txt2" href="#">
+                Username / Password?
+            </a>
+        </div>*@
+
+                    @*<div class="text-center p-t-136">
+            <a class="txt2" href="#">
+                Create your Account
+                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+            </a>
+        </div>*@
+
+                </form>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    @*<script src="~/logindesign/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/logindesign/vendors/bootstrap/js/popper.js"></script>
+    <script src="~/logindesign/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/logindesign/vendors/select2/select2.min.js"></script>
+    <script src="~/logindesign/vendors/till/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <script src="js/main.js"></script>*@
+</body>
+</html>

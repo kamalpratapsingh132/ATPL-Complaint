@@ -1,0 +1,62 @@
+﻿@model ATPL_Complaint.Models.tbl_assi_product
+@{
+    Layout = "~/Views/Shared/client_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PRODUCT</title>
+</head>
+<body>
+    <div class="col-lg-9 main-body">
+        @using (Html.BeginForm("clientproduct", "client", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12"><h3>Product</h3></div>
+                <div class="col-lg-6">
+                    <table class="table">
+                        <tr>
+                            <th>CLIENT</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.select_client)</td>
+                        </tr>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.select_product)</td>
+                        </tr>
+                        <tr>
+                            <th>EMPLOYEE</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.select_emp)</td>
+                        </tr>
+                        <tr>
+                            <th>INSTALLATION DATE</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.installation_date)</td>
+                        </tr>
+                        <tr>
+                            <th>AMC DATE</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.amc_date)</td>
+                        </tr>
+                        <tr>
+                            <th>AMOUNT</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.amount)</td>
+                        </tr>
+                        <tr>
+                            <th>AMC%</th>
+                            <td>:</td>
+                            <td>@Html.DisplayFor(model => model.amc_per)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

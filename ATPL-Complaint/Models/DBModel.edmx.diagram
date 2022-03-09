@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3457a2aba5d6443d9a724441fe0cd21e" Name="Diagram1">
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_add_admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_assi_product" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_caty" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_city" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_client" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_department" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_designation" Width="1.5" PointX="6.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_product" Width="1.5" PointX="6.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_sadmin" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_state" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_Support_ticket" Width="1.5" PointX="8.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATPL_ComplaintModel.tbl_ticket_for" Width="1.5" PointX="8.625" PointY="2.875" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

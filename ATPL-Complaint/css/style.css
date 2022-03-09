@@ -1,0 +1,90 @@
+﻿body{font-family:Arial;font-size:14px;color:#333;}
+.loginbox{box-shadow:0 29px 73px rgba(0,0,0,0.14);border-radius:50px;padding:60px;margin-top:50px;background:url('../adminimage/login-bg.png') no-repeat left bottom;}
+.loginbox .logo{width:200px;margin-top:60px;}
+.loginbox .form-control{border:none;border-bottom:1px solid #dbdbdb;}
+.loginbox .form-control:focus{border-bottom-color:#0b4077;box-shadow:0 1px 0 #0b4077;}
+h3{color:#0b4077;font-weight:bold;text-transform:uppercase;}
+header{border-bottom:20px solid #0b4077;}
+header .logo{margin:10px 0;}
+.sidebar{background:#0b4077;padding:15px;height:100%;}
+.sidebar h5{font-weight:bold;text-transform:uppercase;color:#fff;}
+.sidebar ul{margin:0;padding:0;}
+.sidebar ul li{list-style:none;display:inline-block;width:100%;}
+.sidebar ul li a{display:inline-block;width:100%;color:#fff;text-transform:uppercase;margin-bottom:25px;font-weight:bold;}
+.main-body{padding-top:20px;padding-bottom:20px;min-height:500px;}
+footer{background:#f1f1f1;text-align:center;padding:10px 0;}
+.popup{position:fixed;top:0;left:0;bottom:0;right:0;background:rgba(255,255,255,0.9);z-index:1;}
+.popup-box{background:#fff;border:5px solid #0b4077;box-shadow:0 20px 49px rgba(255,255,255,0.2);margin-top:50px;text-align:center;padding:30px;}
+.popup-box hr{border-color:#dbdbdb;}
+.table a{color:#0b4077;font-weight:bold;}
+
+/**********check dropdown***********/
+       .MultiCheckBox {
+            border:1px solid #e2e2e2;
+            padding: 5px;
+            border-radius:4px;
+            cursor:pointer;
+        }
+
+        .MultiCheckBox .k-icon{ 
+            font-size: 15px;
+            float: right;
+            font-weight: bolder;
+            margin-top: -7px;
+            height: 10px;
+            width: 14px;
+            color:#787878;
+        } 
+
+        .MultiCheckBoxDetail {
+            display:none;
+            position:absolute;
+            border:1px solid #e2e2e2;
+            overflow-y:hidden;
+            z-index: 1;
+    background: #fff;
+    width:100% !important;
+        }
+        .MultiCheckBoxDetail .mulinput{margin-right:10px;}
+
+        .MultiCheckBoxDetailBody {
+            overflow-y:scroll;
+        }
+
+            .MultiCheckBoxDetail .cont  {
+                clear:both;
+                overflow: hidden;
+                padding: 2px;
+            }
+
+            .MultiCheckBoxDetail .cont:hover  {
+                background-color:#cfcfcf;
+            }
+
+            .MultiCheckBoxDetailBody > div > div {
+                float:left;
+            }
+
+        .MultiCheckBoxDetail>div>div:nth-child(1) {
+        
+        }
+
+        .MultiCheckBoxDetailHeader {
+            overflow:hidden;
+            position:relative;
+            height: 28px;
+            background-color:#3d3d3d;
+        }
+
+            .MultiCheckBoxDetailHeader>input {
+                position: absolute;
+                top: 4px;
+                left: 3px;
+            }
+
+            .MultiCheckBoxDetailHeader>div {
+                position: absolute;
+                top: 5px;
+                left: 24px;
+                color:#fff;
+            }

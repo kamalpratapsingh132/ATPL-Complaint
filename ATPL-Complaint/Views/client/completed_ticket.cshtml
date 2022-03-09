@@ -1,0 +1,46 @@
+﻿@model ATPL_Complaint.Models.support_ticket
+@{
+    Layout = "~/Views/Shared/client_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>clientlist</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12"><h3>Pending Tickets</h3></div>
+        <table class="table table-bordered" style="width:100%" height:220%px">
+            <tr>
+                <th>S.No.</th>
+                <th>Date</th>
+                <th>Ticket Number</th>
+                <th>Query</th>
+                <th>Status</th>
+                @*<th style="text-align:center">Edit</th>
+                    <th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.complete_ticket)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td></td>
+                    <td>@item.ticket_for</td>
+                    <td>@item.message</td>
+                    @*<td align="center">
+                            <a href="@Url.Action("#",new { item.id})" class="btn btn-success">Edit</a>
+
+                        </td>
+                        <td align="center">
+                            <a href="@Url.Action("clientdelete",new { item.id })" OnClick="return confirm('Are you sure? want to delete the data.');" class="btn btn-danger">Delete</a>
+                        </td>*@
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

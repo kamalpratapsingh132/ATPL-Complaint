@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Super-Admin MasterPage";
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Super-Admin MasterPage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/registerdesign/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <div class="col-md-12" style="text-align:center"><img src="~/img/images.jpg" class="rounded-circle" width="200" /></div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                <li><a href="/sadmin/addadmin">ADD EMPLOYEE</a></li>
+                <li><a href="/sadmin/Assiproduct">ASSIGN PRODUCT</a></li>
+                <li><a href="/sadmin/clientlist">CLIENT LIST</a></li>
+                <li><a href="/sadmin/productlist">PRODUCT LIST</a></li>
+                <li><a href="/sadmin/employeelist">EMPLOYEE LIST</a></li>
+                <li><a href="/sadmin/Assi_productlist">ASSIGN PRODUCT LIST</a></li>
+                <li><a href="/sadmin/sadminlogin">LOGOUT</a></li>
+            </ul>
+
+                <div class="footer">
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary"style="width:fit-content">
+                        @*<i class="fa fa-bars"></i>*@
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/sadmin/addadmin">ADD EMPLOYEE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sadmin/clientlist">CLIENT LIST</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sadmin/productlist">PRODUCT LIST</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sadmin/employeelist">EMPLOYEE LIST</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sadmin/Assiproduct">ASSIGN PRODUCT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sadmin/Assi_productlist">ASSIGN PRODUCT LIST</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/sadmin/sadminlogin">LOGOUT</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+            @RenderBody()
+
+
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    @*<script src="~/registerdesign/js/jquery.min.js"></script>*@
+    <script src="~/registerdesign/js/popper.js"></script>
+    <script src="~/registerdesign/js/bootstrap.min.js"></script>
+    <script src="~/registerdesign/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model ATPL_Complaint.Models.emp
+@{
+    Layout = "~/Views/Shared/sadmin_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>clientlist</title>
+</head>
+<body>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee NAME</th>
+                <th>CONTACT NUMBER</th>
+                <th>EMAIL ID</th>
+                <th>ADDRESS</th>
+                <th>CITY</th>
+                <th>STATE</th>
+                <th>PINCODE</th>
+                <th>DESIGINATION</th>
+                <th>DEPARTMENT</th>
+                @*<th style="text-align:center">Edit</th>
+        <th style="text-align:center">Delete</th>*@
+            </tr>
+
+            @foreach (var item in ViewBag.emplist)
+            {
+                <tr>
+                    <td>@item.emp_id</td>
+                    <td>@item.emp_name</td>
+                    <td>@item.contact_no</td>
+                    <td>@item.email_id</td>
+                    <td>@item.address</td>
+                    <td>@item.city</td>
+                    <td>@item.state</td>
+                    <td>@item.pincode</td>
+                    <td>@item.desigination</td>
+                    <td>@item.department</td>
+                    @*<td align="center">
+                            <a href="@Url.Action("#",new { item.id})" class="btn btn-success">Edit</a>
+
+                        </td>
+                        <td align="center">
+                            <a href="@Url.Action("clientdelete",new { item.id })" OnClick="return confirm('Are you sure? want to delete the data.');" class="btn btn-danger">Delete</a>
+                        </td>*@
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
